@@ -1,0 +1,44 @@
+{
+  "name": "zapier-dev-mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.arose26/zapier-dev-mcp",
+  "description": "MCP server for Zapier integration developers — inspect, lint, and validate zapier-platform-cli projects. Review-readiness checks for triggers, creates, searches, and auth.",
+  "type": "module",
+  "bin": {
+    "zapier-dev-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "zapier",
+    "zapier-platform",
+    "integration",
+    "automation",
+    "lint",
+    "developer-tools",
+    "claude"
+  ],
+  "license": "MIT",
+  "author": "Kole Harvey",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0",
+    "@types/node": "^22.0.0"
+  }
+}
