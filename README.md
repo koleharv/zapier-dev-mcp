@@ -35,6 +35,7 @@ Then: *"Lint C:\\code\\my-zapier-app and walk me through fixing the errors."*
 |------|--------------|
 | `inspect_integration` | Structured summary of the app definition |
 | `lint_integration` | Review-readiness report: errors / warnings / info, each anchored to a component path |
+| `generate_test_fixtures` | Ready-to-run bundle mocks (typed `inputData`, `authData` from your auth fields) plus an appTester test skeleton per component |
 | `validate_integration` | Runs the project's own `zapier validate` (schema + style), with install guidance if the CLI is missing |
 
 ## What the linter checks

@@ -48,6 +48,7 @@ console.log("tools:", tools.map((t) => t.name).join(", "));
 const calls = [
   ["inspect_integration", { path: dir }],
   ["lint_integration", { path: dir }],
+  ["generate_test_fixtures", { path: dir, component: "send_message" }],
   ["validate_integration", { path: dir }], // CLI not installed → guidance error
   ["inspect_integration", { path: join(dir, "nope") }], // must be isError
 ];

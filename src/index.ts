@@ -5,10 +5,11 @@ import { exec } from "node:child_process";
 import { promisify } from "node:util";
 import { z } from "zod";
 import { loadProject } from "./extract.js";
+import { generateFixtures } from "./fixtures.js";
 import { lintDefinition, toReport } from "./lint.js";
 
 const execAsync = promisify(exec);
-const server = new McpServer({ name: "zapier-dev", version: "0.1.0" });
+const server = new McpServer({ name: "zapier-dev", version: "0.2.0" });
 
 type ToolResult = { content: { type: "text"; text: string }[]; isError?: boolean };
 
@@ -83,6 +84,23 @@ server.registerTool(
   guarded(async ({ path }) => {
     const { packageJson, definition } = await loadProject(path);
     return jsonResult(toReport(lintDefinition(definition, packageJson)));
+  }),
+);
+
+server.registerTool(
+  "generate_test_fixtures",
+  {
+    title: "Generate test fixtures",
+    description:
+      "Ready-to-run test scaffolds for the integration: a bundle mock (authData from the auth fields, typed inputData from each component's input fields) plus a zapier-platform appTester test skeleton per trigger/create/search. Optionally target one component.",
+    inputSchema: {
+      path: pathArg,
+      component: z.string().optional().describe("Limit to one component, e.g. 'triggers.new_message' or 'new_message'"),
+    },
+  },
+  guarded(async ({ path, component }) => {
+    const { definition } = await loadProject(path);
+    return jsonResult(generateFixtures(definition, component));
   }),
 );
 
