@@ -1,7 +1,7 @@
 {
   "name": "zapier-dev-mcp",
-  "version": "0.2.0",
-  "mcpName": "io.github.arose26/zapier-dev-mcp",
+  "version": "0.2.1",
+  "mcpName": "io.github.koleharv/zapier-dev-mcp",
   "description": "MCP server for Zapier integration developers — inspect, lint, and validate zapier-platform-cli projects. Review-readiness checks for triggers, creates, searches, and auth.",
   "type": "module",
   "bin": {
@@ -31,7 +31,7 @@
   "author": "Kole Harvey",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arose26/zapier-dev-mcp.git"
+    "url": "git+https://github.com/koleharv/zapier-dev-mcp.git"
   },
   "engines": {
     "node": ">=18"

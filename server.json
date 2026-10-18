@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.arose26/zapier-dev-mcp",
+  "name": "io.github.koleharv/zapier-dev-mcp",
   "description": "For Zapier integration developers: inspect, lint, and validate zapier-platform-cli projects.",
   "repository": {
-    "url": "https://github.com/arose26/zapier-dev-mcp",
+    "url": "https://github.com/koleharv/zapier-dev-mcp",
     "source": "github"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "zapier-dev-mcp",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "transport": {
         "type": "stdio"
       }
